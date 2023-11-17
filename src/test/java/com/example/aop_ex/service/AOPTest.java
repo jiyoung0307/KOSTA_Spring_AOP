@@ -2,12 +2,12 @@ package com.example.aop_ex.service;
 
 import com.example.aop_ex.aop.AspectLog;
 import com.example.aop_ex.aop.AspectPerformance;
+import com.example.aop_ex.controller.PostController;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
 @Slf4j

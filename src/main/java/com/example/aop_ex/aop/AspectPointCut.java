@@ -14,7 +14,7 @@ public class AspectPointCut {
 //    6) 예외
 
 //    Before
-    @Pointcut("execution(* *..Post*.*(..))")
+    @Pointcut("execution(* com.example.aop_ex.controller..*(..))")
     public void pointcutPostOnly() {}
 
 //    After
