@@ -5,17 +5,14 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 
 @Slf4j
 @Aspect
+@Order(1)
 public class AspectPerformance {
 
-    @Pointcut("execution(* com.example.aop_ex.service..*(..))")
-    private void pointcutAllService() {
-
-    }
-
-    @Around("pointcutAllService()")
+    @Around("com.example.aop_ex.aop.AspectPointCut.pointcutPostOnly()")
     public void leaveLog(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("method 실행되기 전 시간 체크 : {}", joinPoint.getSignature().getName());
         long start = System.currentTimeMillis();

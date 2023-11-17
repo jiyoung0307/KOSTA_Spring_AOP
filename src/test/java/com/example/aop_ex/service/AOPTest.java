@@ -16,6 +16,9 @@ import org.springframework.context.annotation.Import;
 public class AOPTest {
 
     @Autowired
+    PostController postController;
+
+    @Autowired
     UserRepository userRepository;
 
     @Autowired
@@ -30,8 +33,13 @@ public class AOPTest {
 
     @Test
     public void testPostSave() {
-        userRepository.saveUser("userA");
+//        userRepository.saveUser("userA");
+        postController.newPost("userA");
+    }
 
-        postRepository.savePost("postA");
+    @Test
+    public void testUserSave() {
+//        userRepository.saveUser("userA");
+        userRepository.saveUser("userA");
     }
 }
